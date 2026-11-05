@@ -3201,12 +3201,42 @@ const MES_LABELS = { junio: 'Junio (cierre)', julio: 'Julio (cierre)', agosto: '
 let currentMes = 'noviembre';
 let PRODUCTOS = MESES_DATA[currentMes];
 const HIST_VENTAS_DIA = {"cumulative": {"ene": [3, 4, 6, 12, 18, 22, 27, 32, 35, 37, 41, 48, 54, 62, 63, 68, 70, 71, 76, 78, 87, 94, 100, 105, 105, 107, 108, 114, 118, 121, 127], "feb": [null, 1, 3, 8, 11, 16, 20, 20, 26, 31, 34, 40, 47, 55, 55, 66, 71, 71, 77, 78, 85, 86, 90, 91, 102, 108, 114, 116], "mar": [null, 1, 2, 6, 12, 17, 17, 21, 28, 30, 34, 40, 41, 43, 43, 45, 48, 49, 52, 57, 63, 64, 74, 81, 81, 88, 94, 98, 102, 114, 127], "abr": [1, 2, 5, 8, 10, 12, 14, 18, 21, 22, 28, 30, 38, 45, 47, 51, 54, 60, 62, 63, 71, 80, 88, 95, 105, 105, 110, 119, 124, 137], "may": [null, 2, 2, 7, 10, 13, 14, 18, 26, 28, 31, 36, 37, 42, 46, 53, 54, 64, 67, 71, 72, 76, 79, 79, 88, 93, 99, 100, 103, 110, 110], "jun": [null, 6, 14, 17, 23, 23, 23, 27, 29, 33, 35, 47, 52, 52, 55, 66, 69, 72, 75, 77, 78, 92, 98, 101, 106, 107, 109, 110, 112, 130], "jul": [4, 10, 12, 18, 18, 26, 28, 31, 35, 38, 41, 43, 45, 46, 46, 46, 53, 55, 56, 61, 65, 74, 81, 89, 94, 96, 96, 97, 99, 103, 114], "ago": [1, 1, 3, 6, 15, 16, 18, 23, 23, 28, 30, 31, 33, 36, 41, 43, 50, 52, 58, 63, 68, 69, 69, 77, 77, 77, 79, 82, 89, 91, 104], "sep": [2, 5, 7, 10, 13, 13, 16, 25, 30, 36, 43, 49, 50, 54, 57, 61, 62, 74, 76, 81, 83, 88, 93, 94, 96, 101, 102, 105, 111, 115], "oct": [5, 5, 7, 7, 13, 26, 34, 45, 52, 58, 61, 71, 77, 84, 87, 91, 93, 96, 96, 106, 108, 111, 116, 116, 117, 118, 120, 121, 129, 138, 153], "nov": [0, 2, 8, 12]}, "dias_en_mes": {"ene": 31, "feb": 28, "mar": 31, "abr": 30, "may": 31, "jun": 30, "jul": 31, "ago": 31, "sep": 30, "oct": 31, "nov": 30}, "mes_label": {"ene": "Enero", "feb": "Febrero", "mar": "Marzo", "abr": "Abril", "may": "Mayo", "jun": "Junio", "jul": "Julio", "ago": "Agosto", "sep": "Septiembre", "oct": "Octubre", "nov": "Noviembre"}, "cumulative_total": {"ene": [9, 50, 68, 88, 133, 201, 260, 333, 381, 422, 436, 493, 558, 617, 663, 715, 769, 783, 836, 868, 942, 989, 1050, 1101, 1110, 1162, 1213, 1252, 1294, 1371, 1427], "feb": [null, 42, 78, 138, 196, 244, 290, 295, 363, 422, 464, 536, 592, 645, 648, 685, 735, 772, 815, 864, 903, 910, 971, 1027, 1098, 1172, 1266, 1323], "mar": [4, 36, 79, 115, 153, 197, 239, 251, 321, 365, 414, 460, 506, 537, 544, 595, 620, 657, 712, 766, 821, 829, 881, 965, 1008, 1075, 1127, 1179, 1195, 1250, 1328], "abr": [35, 51, 64, 89, 100, 152, 198, 242, 290, 325, 380, 391, 479, 541, 609, 680, 721, 771, 788, 870, 918, 978, 1039, 1097, 1150, 1158, 1225, 1285, 1338, 1429], "may": [5, 20, 31, 95, 138, 181, 232, 278, 324, 331, 378, 421, 467, 525, 576, 626, 644, 714, 775, 843, 881, 961, 1004, 1013, 1071, 1131, 1210, 1242, 1331, 1399, 1414], "jun": [39, 76, 115, 146, 200, 227, 231, 299, 345, 387, 437, 505, 572, 583, 629, 686, 731, 773, 822, 878, 883, 942, 1002, 1054, 1118, 1169, 1219, 1229, 1260, 1322], "jul": [36, 75, 133, 186, 192, 245, 282, 323, 360, 420, 458, 471, 513, 539, 584, 622, 678, 732, 736, 783, 818, 875, 901, 945, 979, 983, 1032, 1060, 1066, 1103, 1180], "ago": [26, 29, 64, 108, 143, 160, 211, 263, 268, 314, 339, 371, 405, 443, 469, 482, 526, 571, 616, 685, 737, 785, 799, 845, 882, 930, 990, 1036, 1084, 1104, 1217], "sep": [34, 88, 124, 151, 183, 186, 222, 266, 300, 334, 381, 427, 435, 474, 508, 538, 576, 624, 671, 680, 720, 746, 801, 801, null, null, null, null, null, null], "oct": [34, 52, 82, 84, 140, 196, 247, 277, 313, 351, 367, 444, 498, 541, 580, 644, 677, 688, 724, 770, 822, 852, 907, 947, 952, 993, 1033, 1078, 1115, 1153, 1214], "nov": [9, 36, 69, 109, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]}};
-const LEADS = RAW.LEADS.map(l => ({
+// ===== Universo único de leads comerciales: fuente de verdad para TODAS las páginas =====
+// Orden: (1) registros DARWIN originales (RAW.LEADS, intactos para auditoría) → (2) deduplicación por ID de sesión
+// → (3) exclusiones comerciales verificadas por pipeline de origen → (4) clasificación Región/Zona (gfEnrich)
+// → (5) periodo (mesRango / rango de fechas) → (6) filtro global gfPass. Ninguna página vuelve a excluir por su cuenta.
+const LEAD_EXCLUSIONES = {          // pipeline DARWIN de origen (sin sufijo PC) → agrupación excluida del análisis comercial
+  'Inbound Sofia':      'Inbound Sofia / Avisos gestores',
+  'Avisos gestores':    'Inbound Sofia / Avisos gestores',
+  'Facebook messenger': 'Inbound Sofia / Avisos gestores',
+  'Alese Norte':        'Alese Norte / Alese Sur (Alesecorp)',
+  'Alese Sur':          'Alese Norte / Alese Sur (Alesecorp)',
+  'Lima LinkTower':     'Link Tower (pipeline Lima LinkTower)'
+};
+const LEAD_EXCLUSION_PATRONES = [[/^Link Tower \d+$/i, 'Link Tower (pipeline Lima LinkTower)']];   // mismo pipeline si DARWIN lo exporta numerado
+function leadPipelineBase(c){ return String(c==null?'':c).replace(/\s+PC$/i,'').trim(); }
+function leadExclusion(raw){
+  const b = leadPipelineBase(raw.c);
+  if(LEAD_EXCLUSIONES[b]) return LEAD_EXCLUSIONES[b];
+  const p = LEAD_EXCLUSION_PATRONES.find(([re])=>re.test(b)); return p ? p[1] : null;
+}
+const LEAD_AUDIT = { fuente: RAW.LEADS.length, duplicados: [], excluidos: [] };
+const LEADS = (()=>{
+  const vistos = new Set(), out = [];
+  RAW.LEADS.forEach(l=>{
+    if(vistos.has(l.id)){ LEAD_AUDIT.duplicados.push(l.id); return; }
+    vistos.add(l.id);
+    const ex = leadExclusion(l);
+    if(ex){ LEAD_AUDIT.excluidos.push({id:l.id, fecha:l.f, pipeline:l.c, gestor:l.g, region:l.r, etapa:l.s, fuente:l.so, motivo:ex}); return; }
+    out.push({
   id: l.id, ciudad: l.c, zona: l.z, gestor: l.g,
   region: l.r || "(Sin región)", distrito: l.d, marca: l.m,
   stage: l.s, fecha: l.f, resp_ia_min: l.ri, cierre_post_hum_min: l.cp,
   dias_maduracion: l.dm, mes_resp_humana: l.mh
-}));
+    });
+  });
+  return out;
+})();
 
 
 const PROD_ORDER = ["convencional","plan21","movveplan","todos"];
@@ -3376,10 +3406,12 @@ function normalizeCommercialZone(value){
   return RZ_LEAD_ALIAS[base]||base;
 }
 function commercialZoneKey(region,zone){ return `${region}\u0000${zone}`; }
+// Zonas de equipo de gestor que no son zonas comerciales del reporte: el lead se clasifica por su pipeline de origen.
+const LEAD_ZONAS_EQUIPO = /^Link Tower \d+$/i;
 function classifyCommercialLead(l){
   const managerName=GESTOR_ALIAS[l.gestor];
   const manager=managerName&&GESTORES_DIGITAL.find(g=>g.nombre===managerName);
-  if(manager){
+  if(manager && !LEAD_ZONAS_EQUIPO.test(manager.zona)){
     const zone=normalizeCommercialZone(manager.zona);
     return {region:manager.region||'Sin región',zone};
   }
@@ -4161,8 +4193,9 @@ function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;'
 function jsq(s){ return String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'"); }
 
 function gfEnrich(){
-  RAW.LEADS.forEach((r,i)=>{
-    const l = LEADS[i];
+  const rawById = new Map(RAW.LEADS.map(r=>[r.id,r]));      // emparejado por ID (LEADS ya está deduplicado y filtrado)
+  LEADS.forEach(l=>{
+    const r = rawById.get(l.id);
     l.cliente=r.n||null; l.fuente=r.so||null; l.fderiv=r.dd||null; l.dv=(r.dv===undefined?null:r.dv); l.cerrado=!!r.cl; l.fcont=r.hc||null; l.fia=r.ua||null;
     const off = GESTOR_ALIAS[l.gestor];
     const assignment=classifyCommercialLead(l);
@@ -5215,6 +5248,68 @@ function vsRenderAnalysis(m){
   document.getElementById('vsAnalysis').innerHTML = cards.join('');
 }
 
+// ===== Auditoría de leads: compara todas las páginas contra el universo único (se recalcula al cambiar mes, filtros o datos) =====
+function leadAuditData(){
+  const [d1, d2] = mesRango(currentMes);
+  const inR = f => !!f && f>=d1 && f<=d2;
+  const crudosMes = RAW.LEADS.filter(r=>inR(r.f));
+  const idsMes = new Set(crudosMes.map(r=>r.id));
+  const excluidos = LEAD_AUDIT.excluidos.filter(e=>inR(e.fecha));
+  const porMotivo = {}; excluidos.forEach(e=>porMotivo[e.motivo]=(porMotivo[e.motivo]||0)+1);
+  const validosNac = LEADS.filter(l=>inR(l.fecha));
+  const validos = validosNac.filter(gfPass);
+  const zonasCom = new Set([...COMMERCIAL_ZONE_REGION.keys()].map(normalizeCommercialZone));
+  const porRegion = {}, porZona = {};
+  validos.forEach(l=>{ porRegion[l.hreg]=(porRegion[l.hreg]||0)+1; porZona[l.hzona]=(porZona[l.hzona]||0)+1; });
+  const sum = o => Object.values(o).reduce((a,b)=>a+b,0);
+  // lo que cuenta cada página con su propia función
+  const rangoGlobal = dateFrom===d1 && dateTo===d2;
+  const pag = {};
+  pag.sidebar = getDateFilteredLeads().length;                      // sidebar, Página 1 (KPI leads, funnel DARWIN), Desatendidos
+  pag.contact = stats(gfBase()).total;                                // Contactabilidad
+  const zKey = GF.zona ? normalizeCommercialZone(GF.zona) : '';
+  pag.regionZona = rzZonaRows().rows.filter(r=>(!GF.region||r.region===GF.region)&&(!zKey||r.zona===zKey)).reduce((a,r)=>a+r.leads,0);   // Página 1 · Región → Zona
+  let fc = null; if(typeof fcMes!=='undefined' && fcMes===currentMes){ const [a,b]=fcGetDateRange(); fc = LEADS.filter(l=>l.fecha>=a && l.fecha<=b && gfPass(l)).length; }
+  pag.funnel = fc;                                                    // Funnel ejecutivo (solo si muestra el mismo mes)
+  const L = vsLeadModel(vsModel());
+  pag.semanal = L.leadsT.reduce((a,b)=>a+b,0);                        // Ventas semanales · Leads y conversión
+  return {d1, d2, crudos: crudosMes.length, duplicadosMes: crudosMes.length-idsMes.size, excluidos, porMotivo,
+    validosNac: validosNac.length, validos: validos.length, sinRegion: validos.filter(l=>l.hreg==='Sin región').length,
+    sinZona: validos.filter(l=>!zonasCom.has(l.hzona)).length, porRegion, porZona, sumRegion: sum(porRegion), sumZona: sum(porZona),
+    rangoGlobal, pag, excEnUniverso: LEADS.filter(l=>leadExclusion({c:l.ciudad})).length, dupUniverso: LEADS.length-new Set(LEADS.map(l=>l.id)).size,
+    zonasEquipo: LEADS.filter(l=>LEAD_ZONAS_EQUIPO.test(l.hzona)).length};
+}
+function leadAuditHTML(ck){
+  const A = leadAuditData(), f = n => n==null ? '—' : n.toLocaleString(), dd = s => s.split('-').reverse().join('/');
+  const ref = A.validos;
+  const fila = (k,v,ok,nota) => `<tr><td>${k}</td><td class="num"><b>${f(v)}</b></td><td>${ok==null?'':ok?'<span class="vs-ok">✓</span>':'<span class="vs-bad">✗</span>'} ${nota||''}</td></tr>`;
+  const pagOk = (v) => v==null ? null : v===ref;
+  const difs = [];
+  [['Filtro global (sidebar)',A.rangoGlobal?A.pag.sidebar:null],['Contactabilidad',A.rangoGlobal?A.pag.contact:null],['Página 1 · Región → Zona',A.pag.regionZona],['Funnel ejecutivo',A.pag.funnel],['Ventas semanales · leads',A.pag.semanal]]
+    .forEach(([n,v])=>{ if(v!=null && v!==ref) difs.push(`${n}: ${f(v)} (${v>ref?'+':''}${f(v-ref)})`); });
+  if(difs.length && window.console) console.warn('[Auditoría leads] diferencias entre páginas', currentMes, GF, difs);
+  let h = `<div class="vs-check" style="border-bottom:none;padding-top:12px;"><span></span><b>Auditoría de leads DARWIN · ${esc(MES_LABELS[currentMes])} · ${dd(A.d1)}–${dd(A.d2)} · snapshot ${esc(RAW.snapshot)}</b></div>
+  <div class="table-scroll"><table class="x-table" style="margin:4px 0 8px;"><thead><tr><th>Concepto</th><th class="num">Leads</th><th>Estado</th></tr></thead><tbody>
+  ${fila('Leads originales DARWIN del mes (registros)', A.crudos, null, A.duplicadosMes?`incluye ${f(A.duplicadosMes)} IDs repetidos`:'sin IDs repetidos')}
+  ${fila('Excluidos por regla comercial', A.excluidos.length, null, Object.entries(A.porMotivo).map(([k,v])=>`${esc(k)}: ${f(v)}`).join(' · ')||'ninguno')}
+  ${fila('Leads comerciales válidos (nacional)', A.validosNac, A.crudos-A.duplicadosMes-A.excluidos.length===A.validosNac, 'originales − duplicados − excluidos')}
+  ${fila('Leads comerciales válidos con filtro activo', A.validos, null, gfActive()?esc([GF.region,GF.zona,GF.gestor].filter(Boolean).join(' › ')):'sin filtro')}
+  ${fila('Sin región comercial', A.sinRegion, null, 'categoría explícita “Sin región”')}
+  ${fila('Sin zona comercial del reporte', A.sinZona, null, 'zona que no existe en el reporte comercial')}
+  ${fila('Filtro global (sidebar) · Página 1 · Desatendidos', A.rangoGlobal?A.pag.sidebar:null, A.rangoGlobal?pagOk(A.pag.sidebar):null, A.rangoGlobal?'':'rango de fechas personalizado en Página 1: no se compara con el mes')}
+  ${fila('Contactabilidad · leads totales', A.rangoGlobal?A.pag.contact:null, A.rangoGlobal?pagOk(A.pag.contact):null)}
+  ${fila('Página 1 · tabla Región → Zona', A.pag.regionZona, pagOk(A.pag.regionZona))}
+  ${fila('Funnel ejecutivo · total leads', A.pag.funnel, pagOk(A.pag.funnel), A.pag.funnel==null?'muestra otro mes: no comparable':'')}
+  ${fila('Ventas semanales · suma de leads semanales', A.pag.semanal, pagOk(A.pag.semanal))}
+  </tbody></table></div>`;
+  h += ck(A.sumRegion===A.validos, `Suma de leads por región = ${f(A.sumRegion)} = leads válidos (${f(A.validos)}): ${Object.entries(A.porRegion).map(([k,v])=>`${esc(k)} ${f(v)}`).join(' · ')}.`);
+  h += ck(A.sumZona===A.validos, `Suma de leads por zona = ${f(A.sumZona)} (${Object.keys(A.porZona).length} zonas).`);
+  h += ck(A.dupUniverso===0, `Sin IDs duplicados en el universo comercial (${f(LEAD_AUDIT.duplicados.length)} repetidos descartados en toda la fuente).`);
+  h += ck(A.excEnUniverso===0, `Registros excluidos ausentes de los indicadores: ${f(A.excEnUniverso)} leads de pipelines excluidos en el universo (${f(LEAD_AUDIT.excluidos.length)} excluidos en toda la fuente, conservados en RAW para auditoría).`);
+  h += ck(A.zonasEquipo===0, `Sin zonas de equipo (Link Tower) como zona comercial: los leads de gestores Link Tower se cuentan en la zona de su pipeline.`);
+  h += ck(!difs.length, difs.length ? `Diferencias entre páginas: ${esc(difs.join(' · '))}.` : `Todas las páginas comparables cuentan ${f(ref)} leads para este mes y filtro.`);
+  return h;
+}
 function vsRenderChecks(m){
   const ck = (ok, txt, warn) => `<div class="vs-check"><span class="${ok?'vs-ok':warn?'vs-warn':'vs-bad'}">${ok?'✓':warn?'!':'✗'}</span><span>${txt}</span></div>`;
   // calendario: cada día del mes en una sola semana, sin huecos ni solapes
@@ -5273,6 +5368,7 @@ function vsRenderChecks(m){
   } else {
     h += ck(true, `${esc(MES_LABELS[currentMes].split(' ')[0])}: no hay registro manual “Avance Total” para este mes; ${m.fuenteZonas==='sin'?'el desglose por zona no está disponible':'se usan los datos reales del reporte comercial cargado para este mes'} (no se reutilizan cifras de octubre).`);
   }
+  h += leadAuditHTML(ck);
   // leads y conversión (vista D · Leads y conversión)
   {
     const L = vsLeadModel(m), sm = a => a ? a.reduce((x,y)=>x+y,0) : null;
@@ -5280,10 +5376,10 @@ function vsRenderChecks(m){
     const zOk = L.grupos.every(g=>g.leads.every((v,i)=>v===g.zonas.reduce((a,z)=>a+z.leads[i],0)));
     const rOk = L.leadsT.every((v,i)=>v===L.grupos.reduce((a,g)=>a+g.leads[i],0));
     h += `<div class="vs-check" style="border-bottom:none;padding-top:12px;"><span></span><b>Leads y conversión · DARWIN ${esc(RAW.snapshot)} + reporte comercial</b></div>`;
-    h += ck(tl===L.darwinMes && tl===L.total, `Leads semanales suman los leads del mes: ${L.leadsT.join(' + ')} = ${tl.toLocaleString()} = leads DARWIN únicos del alcance con fecha ${m.fdm(1)}–${m.fdm(m.corte||m.dim)} (${L.darwinMes.toLocaleString()}).`);
+    h += ck(tl===L.darwinMes && tl===L.total, `Leads semanales suman los leads del mes: ${L.leadsT.join(' + ')} = ${tl.toLocaleString()} = leads DARWIN únicos del alcance con fecha ${m.fdm(1)}–${m.fdm(L.corteLeads||m.dim)} (${L.darwinMes.toLocaleString()}).`);
     h += ck(zOk && rOk, `Zonas suman su región y las regiones el total en cada semana${L.grupos.some(g=>g.region==='Sin región')?' (incluye “Sin región”)':''}${L.grupos.some(g=>g.zonas.some(z=>z.sinFila))?'; incluye pipelines sin fila de ventas':''}.`);
     h += ck(L.dup===0, `Sin leads duplicados: ${L.dup} IDs repetidos descartados.`);
-    h += ck(true, `Mismo periodo para leads y ventas: mes ${m.ym}, semanas ${m.semanas.filter(s=>s.estado!=='Futura').map(s=>'S'+s.n+' '+s.rango).join(', ')}; leads posteriores al corte de ventas (${m.fdm(m.corte||m.dim)}) excluidos: ${L.posCorte}. La S${(m.semanas.find(s=>s.estado==='En curso')||{n:'-'}).n} parcial cuenta solo días hasta el corte; DARWIN del ${m.fdm(m.corte||m.dim)} llega hasta las ${esc(RAW.snapshot.slice(11))}.`);
+    h += ck(L.posCorte===0, `Mismo universo y corte que el filtro global: leads DARWIN del ${L.lDesde.split('-').reverse().join('/')} al ${L.lHasta.split('-').reverse().join('/')} (snapshot ${esc(RAW.snapshot)}), filtro global aplicado con la misma función gfPass; leads sin semana: ${L.posCorte}. Ventas: corte ${m.corte?m.fdm(m.corte):'—'}${m.corte && L.corteLeads>m.corte ? ' — las ventas llegan hasta un día anterior al de los leads, la conversión de la semana en curso es referencial' : ''}.`, L.posCorte===0);
     const vs = L.vSemT ? sm(L.vSemT) : null;
     h += ck(!L.ventasOk || L.vSemT==null || vs===L.vTotT, L.ventasOk ? (L.vSemT ? `Ventas semanales suman las mensuales: ${L.vSemT.join(' + ')} = ${vs} (total ${L.vTotT}).` : `Ventas: total del mes ${L.vTotT??'N/D'}; sin semanas verificables para este alcance (conversión semanal = N/D).`) : 'Gestor seleccionado: leads filtrados por gestor (DARWIN); ventas y conversión N/D porque la fuente no asigna ventas a gestores.', !L.ventasOk || L.vSemT==null);
     const cv = (L.vTotT!=null && tl>0) ? L.vTotT/tl*100 : null;
@@ -5319,17 +5415,17 @@ function vsSetMinLeads(v){ const n=Math.max(1, Math.round(+v||0)); VS_CONV_MIN_L
 function vsLeadModel(m){
   const nW = m.nW, zero = () => new Array(nW).fill(0);
   const wkOf = d => m.weeks.findIndex(w=>d>=w.start && d<=w.end);
-  const corteLeads = m.corte;                                // mismo corte que las ventas: no se mezclan periodos
+  const [lDesde, lHasta] = mesRango(currentMes);             // mismo rango y corte DARWIN que el filtro global y las demás páginas
+  const corteLeads = lHasta.slice(0,7)===m.ym ? +lHasta.slice(8,10) : 0;
   const enAlcance = (r,z) => (!GF.region || r===GF.region) && (!m.zKey || z===m.zKey);
   const ids = new Set(); let dup = 0, posCorte = 0, total = 0;
   const filasL = new Map();                                  // clave región\0zona → {leads:[]}
   LEADS.forEach(l=>{
-    if(!l.fecha || l.fecha.slice(0,7)!==m.ym) return;
-    if(GF.gestor && l.gnom!==GF.gestor) return;              // gestor: asignación propia de DARWIN (último asignado por IA)
-    if(!enAlcance(l.hreg, l.hzona)) return;
+    if(!l.fecha || l.fecha<lDesde || l.fecha>lHasta) return;  // periodo
+    if(!gfPass(l)) return;                                     // filtro global único (Región / Zona / Gestor)
     if(ids.has(l.id)){ dup++; return; } ids.add(l.id);
     const d = +l.fecha.slice(8,10);
-    if(d>corteLeads){ posCorte++; return; }
+    if(wkOf(d)<0){ posCorte++; return; }                       // control: fecha fuera de las semanas del mes
     const k = l.hreg+'\u0000'+l.hzona;
     if(!filasL.has(k)) filasL.set(k, {region:l.hreg, zona:l.hzona, leads:zero()});
     filasL.get(k).leads[wkOf(d)]++; total++;
@@ -5362,8 +5458,8 @@ function vsLeadModel(m){
     else { const g = grupos.filter(x=>x.vTot!=null); vTotT = g.length ? g.reduce((a,x)=>a+x.vTot,0) : null; vSemT = g.length && g.every(x=>x.vSem) ? g.reduce((acc,x)=>{ x.vSem.forEach((v,i)=>acc[i]+=v); return acc; }, zero()) : null; }
   }
   // totales de control
-  const darwinMes = (()=>{ const s=new Set(); LEADS.forEach(l=>{ if(l.fecha&&l.fecha.slice(0,7)===m.ym && +l.fecha.slice(8,10)<=corteLeads && (!GF.gestor||l.gnom===GF.gestor) && enAlcance(l.hreg,l.hzona)) s.add(l.id); }); return s.size; })();
-  return {grupos, leadsT, vTotT, vSemT, total, dup, posCorte, darwinMes, ventasOk, corteLeads};
+  const darwinMes = LEADS.filter(l=>l.fecha>=lDesde && l.fecha<=lHasta && gfPass(l)).length;   // mismo universo que el filtro global
+  return {grupos, leadsT, vTotT, vSemT, total, dup, posCorte, darwinMes, ventasOk, corteLeads, lDesde, lHasta};
 }
 
 function vsConv(v, l){ return (l>0 && v!=null) ? v/l*100 : null; }
@@ -5388,12 +5484,14 @@ function vsRenderLeadMatrix(m){
   const cells = (leads, vSem, vTot, why) => {
     const la = acc(leads), va = acc(vSem);
     return S.map((s,i)=>{
-      if(s.estado==='Futura') return `<td class="fut num">—</td><td class="fut num">—</td><td class="fut num">—</td>`;
-      const lv = la[i], vv = va ? va[i] : null;
+      if(s.start>L.corteLeads) return `<td class="fut num">—</td><td class="fut num">—</td><td class="fut num">—</td>`;
+      const sinVentasAun = s.estado==='Futura';
+      const lv = la[i], vv = (va && !sinVentasAun) ? va[i] : null;
+      if(sinVentasAun) why = `Ventas aún sin datos para esta semana (corte de ventas ${m.corte?m.fdm(m.corte):'—'})`;
       return `<td class="num lc-l ${lv===0?'z0':''}">${lv.toLocaleString()}</td><td class="num ${vv===0?'z0':''}">${vv==null?`<span class="lc-nd" title="${esc(why)}">N/D</span>`:vv}</td>${vsConvCell(vv, lv, refConv, why)}`;
     }).join('') + `<td class="num lc-l lc-tot"><b>${sum(leads).toLocaleString()}</b></td><td class="num lc-tot">${vTot==null?`<span class="lc-nd" title="${esc(L.ventasOk?whyFila:whyGestor)}">N/D</span>`:`<b>${vTot}</b>`}</td>${vsConvCell(vTot, sum(leads), refConv, L.ventasOk?whyFila:whyGestor).replace('<td class="num">','<td class="num lc-tot">')}`;
   };
-  let h = `<thead><tr><th rowspan="2">Región / Zona</th>${S.map(s=>`<th colspan="3" class="lc-wk">S${s.n}${s.estado==='En curso'?' <span class="vs-tag curso">en curso</span>':s.estado==='Futura'?' <span class="vs-tag futura">futura</span>':''}<span class="d">${s.rango}${s.estado==='En curso'?` · ${s.diasT} de ${s.dias} días`:''}</span></th>`).join('')}<th colspan="3" class="lc-wk lc-tot">Total mes<span class="d">${m.fdm(1)}–${m.fdm(m.corte||m.dim)}</span></th></tr>
+  let h = `<thead><tr><th rowspan="2">Región / Zona</th>${S.map(s=>`<th colspan="3" class="lc-wk">S${s.n}${s.estado==='En curso'?' <span class="vs-tag curso">en curso</span>':s.estado==='Futura'?' <span class="vs-tag futura">futura</span>':''}<span class="d">${s.rango}${s.estado==='En curso'?` · ${s.diasT} de ${s.dias} días`:''}</span></th>`).join('')}<th colspan="3" class="lc-wk lc-tot">Total mes<span class="d">${m.fdm(1)}–${m.fdm(L.corteLeads||m.dim)}</span></th></tr>
     <tr class="lc-sub">${S.map(()=>'<th class="num">Leads</th><th class="num">Ventas</th><th class="num">Conv.</th>').join('')}<th class="num lc-tot">Leads</th><th class="num lc-tot">Ventas</th><th class="num lc-tot">Conv.</th></tr></thead><tbody>`;
   L.grupos.forEach(g=>{
     const open = forceOpen || vsOpen.has(g.region);
@@ -5420,7 +5518,7 @@ function vsRenderLeadMatrix(m){
   else if(!ok.length) best = `<div class="rz-kpi-val" style="font-size:16px">—</div><div class="rz-kpi-sub">ninguna ${nivelTxt.toLowerCase()} alcanza ${min} leads</div>`;
   else best = `<div class="rz-kpi-val" style="font-size:20px">${esc(ok[0].n)} <small style="font-size:13px;color:#3B6D11">${ok[0].c.toFixed(1)}%</small></div><div class="rz-kpi-sub">${ok[0].v} ventas ÷ ${ok[0].l.toLocaleString()} leads · mínimo ${min} leads${cand.length>ok.length?` · ${cand.length-ok.length} excluida(s) por muestra chica o sin ventas`:''}</div>`;
   document.getElementById('vsLcKpis').innerHTML = `
-    <div class="rz-kpi"><div class="rz-kpi-label">Leads recibidos</div><div class="rz-kpi-val">${tl.toLocaleString()}</div><div class="rz-kpi-sub">DARWIN · ${esc(vsScopeTxt(m))}${GF.gestor?' · '+esc(gShort(GF.gestor)):''} · ${m.fdm(1)}–${m.fdm(m.corte||m.dim)}</div></div>
+    <div class="rz-kpi"><div class="rz-kpi-label">Leads recibidos</div><div class="rz-kpi-val">${tl.toLocaleString()}</div><div class="rz-kpi-sub">DARWIN · ${esc(vsScopeTxt(m))}${GF.gestor?' · '+esc(gShort(GF.gestor)):''} · ${m.fdm(1)}–${m.fdm(L.corteLeads||m.dim)}</div></div>
     <div class="rz-kpi"><div class="rz-kpi-label">Ventas digitales</div><div class="rz-kpi-val">${L.vTotT==null?'N/D':L.vTotT}</div><div class="rz-kpi-sub">${L.ventasOk?'reporte comercial · mismo periodo':'no hay ventas por gestor en la fuente'}</div></div>
     <div class="rz-kpi"><div class="rz-kpi-label">Conversión comercial</div><div class="rz-kpi-val">${cv==null?'N/D':cv.toFixed(2)+'%'}</div><div class="rz-kpi-sub">${cv==null?'sin ventas comparables':`${L.vTotT} ventas ÷ ${tl.toLocaleString()} leads × 100`}</div></div>
     <div class="rz-kpi"><div class="rz-kpi-label">${nivelTxt} con mayor conversión</div>${best}</div>`;
