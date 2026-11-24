@@ -38,6 +38,15 @@
   .gf-sidebar .gf-crumb b { color:#fff; }
   .gf-sidebar .gf-reset { width:100%; padding:9px 10px; border-radius:6px; border:1px solid #E85B1D; background:transparent; color:#F2925A; font-size:11px; font-weight:700; cursor:pointer; }
   .gf-sidebar .gf-reset:hover { background:#3a2418; }
+  .gf-seg { display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid #444441; border-radius:6px; overflow:hidden; background:#2C2C2A; }
+  .gf-seg-btn { padding:8px 6px; border:0; background:transparent; color:#B4B2A9; font-family:inherit; font-size:10.5px; font-weight:700; line-height:1.2; letter-spacing:.02em; cursor:pointer; transition:background .15s ease, color .15s ease; }
+  .gf-seg-btn + .gf-seg-btn { border-left:1px solid #444441; }
+  .gf-seg-btn:hover { color:#fff; }
+  .gf-seg-btn.active { background:#E85B1D; color:#fff; }
+  .gf-seg-btn:focus-visible { outline:2px solid #F2925A; outline-offset:-2px; }
+  .lead-tipo-banner { display:flex; align-items:flex-start; gap:8px; margin:0 0 1rem; padding:9px 14px; border-radius:8px; background:#FFF2EB; border:1px solid #F2C9AE; color:#7A3412; font-size:12px; line-height:1.45; }
+  .lead-tipo-banner b { color:#C6401A; }
+  .lead-tipo-banner[hidden] { display:none; }
   .gf-sidebar .gf-count { margin:2px 0 0; font-size:11px; color:#B4B2A9; line-height:1.6; }
   .gf-sidebar .gf-count b { color:#fff; font-size:13px; }
   .gf-sidebar .gf-count .gf-count-label { color:#B4B2A9; }
@@ -475,6 +484,57 @@
   .fc-chip:hover { border-color:#E85B1D; color:#fff; }
   .fc-chip.active { background:#E85B1D; border-color:#E85B1D; color:#fff; font-weight:700; }
   .fc-note { text-align:center; color:#888; font-size:10.5px; margin-top:1rem; }
+  /* ---- Funnel comercial: composición del total, base comercial y excluidos ---- */
+  .fc-total-row .fc-stage { background:#E85B1D; }
+  .fc-comp { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); grid-template-areas:"n r x" "b b e"; column-gap:12px; row-gap:0; width:100%; max-width:760px; margin:0 auto 4px; }
+  .fc-comp-card { grid-row:1; margin:0; width:100%; text-align:center; }
+  .fc-comp-card .fc-stage-name, .fc-comp-card .fc-stage-sub { text-align:center; }
+  .fc-comp-card .fc-stage-count { font-size:24px; }
+  .fc-stage-sub { font-size:10.5px; opacity:.85; margin-top:6px; }
+  .fc-comp-n { grid-area:n; background:#F2925A; }
+  .fc-comp-r { grid-area:r; background:#C6401A; }
+  .fc-comp-x { grid-area:x; background:#3a3a38; border:1.5px dashed #888780; box-shadow:none; color:#D3D1C7; }
+  .fc-comp-x .fc-stage-conv { background:rgba(255,255,255,.10); }
+  .fc-base { grid-area:b; display:flex; flex-direction:column; align-items:stretch; }
+  .fc-bracket { height:14px; border:2px solid #F8B686; border-top:none; border-radius:0 0 10px 10px; margin:0 18% 0; position:relative; }
+  .fc-bracket-stem { width:2px; height:12px; background:#F8B686; margin:0 auto; }
+  .fc-base-box { background:linear-gradient(135deg,#E85B1D,#C6401A); border:2px solid #F8B686; border-radius:10px; color:#fff; text-align:center; padding:12px 14px; box-shadow:0 4px 16px rgba(232,91,29,.35); }
+  .fc-base-label { font-size:11.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+  .fc-base-count { font-size:30px; font-weight:900; line-height:1.15; margin-top:2px; }
+  .fc-base-pct { display:inline-block; margin-top:4px; font-size:11.5px; font-weight:700; background:rgba(255,255,255,.18); padding:1px 10px; border-radius:10px; }
+  .fc-excl { grid-area:e; display:flex; flex-direction:column; align-items:stretch; }
+  .fc-excl-stem { width:0; height:26px; border-left:2px dashed #888780; margin:0 auto; }
+  .fc-excl-box { border:1.5px dashed #888780; border-radius:10px; color:#D3D1C7; text-align:center; padding:10px 10px; background:rgba(255,255,255,.03); }
+  .fc-excl-label { font-size:10.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#B4B2A9; }
+  .fc-excl-count { font-size:22px; font-weight:800; line-height:1.2; color:#fff; }
+  .fc-excl-sub { font-size:10.5px; opacity:.85; margin-top:2px; }
+  .fc-stop { display:inline-block; margin-top:6px; font-size:10.5px; font-weight:700; color:#F09595; border:1px solid rgba(240,149,149,.5); border-radius:10px; padding:1px 9px; }
+  .fc-into { text-align:center; color:#F8B686; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin:10px 0 8px; }
+  .fc-side-label small { display:block; color:#888780; font-size:10.5px; margin-top:2px; }
+  .fc-venta-box-base { background:linear-gradient(135deg,#1F9E56,#0B5C33); border-color:#8FD6A8; box-shadow:0 6px 22px rgba(31,158,86,.28); }
+  .fc-venta-box-base .fc-venta-label { color:#BFF0CF; }
+  .fc-note-warn { color:#E8B04B; }
+  .fc-historical-badge[hidden] { display:none; }
+  /* ---- Composición de leads: contraer / expandir ---- */
+  .fc-comp-toggle { display:inline-flex; align-items:center; gap:8px; margin:10px auto 4px; padding:6px 16px; border-radius:16px; border:1.5px solid #E85B1D; background:rgba(232,91,29,.12); color:#F8B686; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:.04em; cursor:pointer; transition:background .2s ease, color .2s ease; }
+  .fc-comp-toggle:hover, .fc-comp-toggle:focus-visible { background:#E85B1D; color:#fff; outline:none; }
+  .fc-comp-toggle-icon { display:inline-block; font-size:12px; transition:transform .35s ease; }
+  .fc-comp-toggle[aria-expanded="true"] .fc-comp-toggle-icon { transform:rotate(180deg); }
+  .fc-comp-collapse { display:grid; grid-template-rows:0fr; opacity:0; width:100%; transition:grid-template-rows .4s ease, opacity .3s ease; }
+  .fc-comp-collapse.is-open { grid-template-rows:1fr; opacity:1; }
+  .fc-comp-inner { overflow:hidden; min-height:0; }
+  .fc-comp-collapse .fc-comp { padding:6px 4px 10px; }
+  .fc-comp-collapse:not(.is-open) .fc-comp { visibility:hidden; transition:visibility 0s .4s; }
+  @media (prefers-reduced-motion: reduce){ .fc-comp-collapse, .fc-comp-toggle-icon { transition:none; } }
+  @media (max-width:640px){
+    .fc-comp { grid-template-columns:1fr; grid-template-areas:"n" "r" "b" "x" "e"; row-gap:10px; }
+    .fc-comp-card { grid-row:auto; }
+    .fc-bracket { display:none; }
+    .fc-bracket-stem { display:none; }
+    .fc-excl-stem { height:6px; border-left:none; }
+    .fc-row { grid-template-columns:1fr 84px; gap:8px; }
+    .fc-venta-box { min-width:0; width:100%; padding:1.1rem 1rem; }
+  }
 /* ===== Página 5 — Ventas semanales ===== */
 .vs-kpis { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; margin-bottom:1.5rem; }
 @media (max-width:1280px){ .vs-kpis { grid-template-columns:repeat(6,minmax(0,1fr)); } .vs-kpis > * { grid-column:span 2; } .vs-kpis > :nth-child(n+4) { grid-column:span 3; } }
@@ -567,6 +627,12 @@ td.lc-nd { text-align:right; }
         <option value="octubre">Octubre 2026 (cierre)</option>
         <option value="noviembre" selected>Noviembre 2026 (en curso)</option>
       </select></div>
+      <div class="gf-field"><label id="gfTipoLabel">Tipo de leads</label>
+        <div class="gf-seg" id="gfTipo" role="group" aria-labelledby="gfTipoLabel">
+          <button type="button" class="gf-seg-btn active" data-v="todos" aria-pressed="true" onclick="setLeadTipo('todos')">Todos los leads</button>
+          <button type="button" class="gf-seg-btn" data-v="nuevos" aria-pressed="false" onclick="setLeadTipo('nuevos')">Solo leads nuevos</button>
+        </div>
+      </div>
       <div class="gf-field"><label for="gfRegion">Región</label><select id="gfRegion" onchange="gfSet('region',this.value)"></select></div>
       <div class="gf-field"><label for="gfZona">Zona</label><select id="gfZona" onchange="gfSet('zona',this.value)"></select></div>
       <div class="gf-field"><label for="gfGestor">Gestor</label><select id="gfGestor" onchange="gfSet('gestor',this.value)"></select></div>
@@ -590,6 +656,10 @@ td.lc-nd { text-align:right; }
     <button class="print-btn" onclick="window.print()">Imprimir / PDF</button>
   </div>
 
+  <div class="lead-tipo-banner" id="leadTipoBanner" hidden>
+    <span aria-hidden="true">●</span>
+    <span><b>Vista: solo leads nuevos</b> (creados en el mes, sin recontactados). Todas las métricas de leads usan esta base. Ventas, metas y cumplimiento no cambian (reporte comercial); por eso, toda “conversión” mostrada es un <b>ratio de ventas totales ÷ leads nuevos</b>, no una conversión atribuible solo a leads nuevos.</span>
+  </div>
   <h1 class="dashboard-page-heading" id="dashboardPageHeading">Ventas y conversión</h1>
   <section class="dashboard-view is-active" id="pageVentas" data-page-view="ventas">
   <p class="section-label" id="acumSection">Ventas acumuladas por día — histórico mensual <span style="font-weight:400;color:#888780;text-transform:none;letter-spacing:0;">· nacional: la fuente no se abre por región / zona / gestor</span></p>
@@ -900,8 +970,9 @@ td.lc-nd { text-align:right; }
   <div class="fc-wrap">
     <div class="fc-title">Funnel Comercial — <span id="fcMesLabel">Noviembre 2026</span> <span class="fc-historical-badge" id="fcHistoricalBadge" hidden>Vista histórica</span><span id="fcZonaLabel"></span></div>
     <div class="fc-stage-wrap" id="fcStages"></div>
-    <div class="fc-venta-wrap"><div class="fc-venta-box" id="fcVentaBox"></div><div class="fc-venta-box fc-venta-box-alt" id="fcVentaBoxGlobal"></div></div>
+    <div class="fc-venta-wrap"><div class="fc-venta-box" id="fcVentaBox"></div><div class="fc-venta-box fc-venta-box-base" id="fcVentaBoxBase"></div><div class="fc-venta-box fc-venta-box-alt" id="fcVentaBoxGlobal"></div></div>
     <div class="fc-note">Etapas y conteos: DARWIN (snapshot 24/11/2026 07:56). Venta: reporte comercial por programa — la etapa "9. Venta" de DARWIN no se usa. Conversión de cada etapa = leads de esa etapa / leads de la etapa inmediatamente anterior.</div>
+    <div class="fc-note" id="fcBaseNote"></div>
   </div>
   </div>
 
@@ -3306,6 +3377,13 @@ let currentProd = "todos";
 // ===== Estado único del filtro global Región → Zona → Gestor: todas las secciones lo consultan =====
 var GF = {region:'', zona:'', gestor:''};
 var GF_ON = false;
+// ===== Filtro global "Tipo de leads": estado único compartido por todo el tablero =====
+// 'todos'  = universo mensual actual (nuevos + recontactados) · 'nuevos' = solo leads cuya fecha de creación original
+// (primer contacto DARWIN, campo creacion / l.nuevo) cae en el mes del registro. No usa la fecha de última gestión.
+// Se aplica una sola vez, dentro de gfPass() (y en rzZonaRows, que no usa gfPass). No modifica LEADS ni ventas/metas.
+var LEAD_TIPO = 'todos';
+function leadSoloNuevos(){ return LEAD_TIPO==='nuevos'; }
+function leadTipoPass(l){ return LEAD_TIPO!=='nuevos' || !!l.nuevo; }
 function gfActive(){ return !!(GF.region||GF.zona||GF.gestor); }
 function ventasCiudad(p, c){
   if(p.ciudades){ const r=p.ciudades.find(x=>x.ciudad===c); return r?r.ventas:0; }
@@ -3489,6 +3567,7 @@ const RZ_COLS = [
   {key:'cump', label:'Cumplimiento', num:true},
 ];
 let rzSort = {key:null, dir:-1};
+
 const rzCollapsed = new Set();
 
 function rzSortBy(key){ if(rzSort.key===key) rzSort.dir*=-1; else rzSort={key, dir:(key==='region'||key==='zona')?1:-1}; renderRegionZona(); }
@@ -3508,6 +3587,7 @@ function rzZonaRows(){
   const leadsBy = new Map(), unmatchedPipelines = new Map();
   LEADS.forEach(l=>{
     if(l.fecha.slice(0,7)!==ym || (GF.gestor&&l.gnom!==GF.gestor)) return;
+    if(!leadTipoPass(l)) return;   // filtro global "Tipo de leads" (todos / solo nuevos)
     const assignment=classifyCommercialLead(l), key=commercialZoneKey(assignment.region,assignment.zone);
     leadsBy.set(key,(leadsBy.get(key)||0)+1);
     if(assignment.region==='Sin región') unmatchedPipelines.set(l.ciudad,(unmatchedPipelines.get(l.ciudad)||0)+1);
@@ -3565,9 +3645,9 @@ function renderRegionZona(){
   const T = rzAgg('TOTAL', rows);
   const cumpCls = T.cump===null?'none':(T.cump>=100?'green':(T.cump>=80?'amber':'red'));
   document.getElementById('rzKpis').innerHTML = `
-    <div class="rz-kpi"><div class="rz-kpi-label">Total leads</div><div class="rz-kpi-val">${T.leads.toLocaleString()}</div><div class="rz-kpi-sub">${scope} · DARWIN ${MES_LABELS[currentMes].split(' ')[0].toLowerCase()}</div></div>
+    <div class="rz-kpi"><div class="rz-kpi-label">Total leads${leadSoloNuevos()?' nuevos':''}</div><div class="rz-kpi-val">${T.leads.toLocaleString()}</div><div class="rz-kpi-sub">${scope} · DARWIN ${MES_LABELS[currentMes].split(' ')[0].toLowerCase()}${leadSoloNuevos()?' · creados en el mes':''}</div></div>
     <div class="rz-kpi"><div class="rz-kpi-label">Total ventas</div><div class="rz-kpi-val">${T.ventas.toLocaleString()}</div><div class="rz-kpi-sub">${PRODUCTOS[currentProd].label} · reporte comercial</div></div>
-    <div class="rz-kpi"><div class="rz-kpi-label">Conversión total</div><div class="rz-kpi-val">${T.conv===null?'—':T.conv.toFixed(1)+'%'}</div><div class="rz-kpi-sub">ventas ÷ leads</div></div>
+    <div class="rz-kpi"><div class="rz-kpi-label">${leadSoloNuevos()?'Ratio ventas / leads nuevos':'Conversión total'}</div><div class="rz-kpi-val">${T.conv===null?'—':T.conv.toFixed(1)+'%'}</div><div class="rz-kpi-sub">${leadSoloNuevos()?'ventas totales ÷ leads nuevos · no atribuible solo a nuevos':'ventas ÷ leads'}</div></div>
     <div class="rz-kpi"><div class="rz-kpi-label">Cumplimiento total</div><div class="rz-kpi-val">${T.cump===null?'—':T.cump.toFixed(1)+'%'}</div><div class="rz-kpi-sub"><i class="rz-dot ${cumpCls}" style="margin-left:0;"></i>${T.ventas} de ${T.meta} meta</div></div>`;
   // escala dinámica de conversión: terciles de las zonas visibles con leads
   const convs = rows.map(r=>r.conv).filter(v=>v!==null).sort((a,b)=>a-b);
@@ -3953,6 +4033,17 @@ const FC_STAGE_LABELS = {
   esc:'Escalado a asesor', e5:'Calificados'
 };
 const FC_COLORS = ['#F8B686','#F2925A','#E85B1D','#C6401A','#8C2A12'];
+let fcCompOpen = false;   // composición de leads del Funnel Comercial: contraída por defecto; se conserva al cambiar mes / filtros
+function fcCompLabel(open){ return open ? 'Ocultar composición de leads' : 'Ver composición de leads'; }
+function toggleFcComp(){
+  fcCompOpen = !fcCompOpen;
+  const box = document.getElementById('fcCompCollapse'), btn = document.getElementById('fcCompToggle');
+  if(box) box.classList.toggle('is-open', fcCompOpen);
+  if(btn){
+    btn.setAttribute('aria-expanded', String(fcCompOpen));
+    btn.querySelector('.fc-comp-toggle-text').textContent = fcCompLabel(fcCompOpen);
+  }
+}
 
 function setupFcChips(){
   document.getElementById('selFcMes').value = fcMes;
@@ -4054,16 +4145,30 @@ function renderFunnelComercial(){
   if(GF.gestor) labelParts.push(GF.gestor);
   document.getElementById('fcZonaLabel').textContent = labelParts.length ? ' — '+labelParts.join(' · ') : ' — Nacional';
 
-  // Etapa 1 = TODOS los leads filtrados (recibidos), sin condicionar por stage mapeado
+  // Total de leads del mes (no se modifica): TODOS los leads filtrados, cada persona una sola vez
   const totalLeads = filtered.length;
 
-  // cumulativo: leads cuya etapa actual es "igual o posterior" en el orden real del funnel
-  // (si un lead ya está en una etapa avanzada, por definición pasó por las anteriores)
-  const counts = [totalLeads];
+  // Composición del total — misma clasificación que el "Funnel de origen" (renderFunnelOrigen):
+  //   nuevo = creado (primer contacto DARWIN) en el mes · recontactado = creado en un mes anterior
+  //   atendido = un gestor le respondió en alguna conversación del mes (contactado)
+  const iniMes = fcFrom.slice(0,7);
+  const fcNuevos = [], fcReconAt = [], fcReconNoAt = [];
+  filtered.forEach(l=>{
+    if(l.creacion.slice(0,7) >= iniMes) fcNuevos.push(l);
+    else if(l.contactado) fcReconAt.push(l);
+    else fcReconNoAt.push(l);
+  });
+  // Base comercial = nuevos + recontactados atendidos (los no atendidos quedan fuera del recorrido)
+  const baseLeads = fcNuevos.concat(fcReconAt);
+  const baseCount = baseLeads.length;
+  const pctOf = (a,b) => b>0 ? (a/b*100) : 0;
+
+  // cumulativo SOBRE LA BASE COMERCIAL: leads cuya etapa actual es "igual o posterior" en el orden real del funnel
+  // (si un lead ya está en una etapa avanzada, por definición pasó por las anteriores) → cada etapa ⊆ la anterior
+  const RANK = {e1:0,e2:1,e3:2,e4:2,esc:3,e5:4,e6:4,e7:4,e8:4};   // Presentación (e4) va tras Ticket; Seguimiento/Visita/Cita (e6-e8) ya pasaron por Calificados
+  const counts = [baseCount];
   for(let i=1;i<FC_STAGE_ORDER.length;i++){
-    // rango real de avance: Presentación (e4) va tras Ticket; Seguimiento/Visita/Cita (e6-e8) ya pasaron por Calificados
-    const RANK = {e1:0,e2:1,e3:2,e4:2,esc:3,e5:4,e6:4,e7:4,e8:4};
-    const c = filtered.filter(l => l.stage && RANK[l.stage]!==undefined && RANK[l.stage] >= i).length;
+    const c = baseLeads.filter(l => l.stage && RANK[l.stage]!==undefined && RANK[l.stage] >= i).length;
     counts.push(c);
   }
 
@@ -4078,46 +4183,114 @@ function renderFunnelComercial(){
   const ratioOk = ventaCount!==null && !GF.gestor;
   const sinRatio = GF.gestor ? 'Conversión no disponible: las ventas no se abren por gestor' : 'Sin ventas en el reporte comercial para este filtro';
 
-  // ---- render etapas DARWIN ----
-  const maxCount = counts[0] || 1;
-  let html = '';
-  FC_STAGE_ORDER.forEach((key,i)=>{
+  // ---- bloque 1: total de leads del mes ----
+  let html = `<div class="fc-row fc-total-row">
+      <div class="fc-stage" style="width:100%;">
+        <div class="fc-stage-name">${leadSoloNuevos()?'Total leads nuevos del mes':'Total leads del mes'}</div>
+        <div class="fc-stage-count">${totalLeads.toLocaleString()}</div>
+        <div class="fc-stage-conv">100% · nuevos + recontactados atendidos + recontactados no atendidos</div>
+      </div>
+      <div class="fc-side-label"><b>100%</b>del total de leads</div>
+    </div>
+    <div class="fc-row"><div style="text-align:center;"><button type="button" class="fc-comp-toggle" id="fcCompToggle" aria-expanded="${fcCompOpen}" aria-controls="fcCompCollapse" onclick="toggleFcComp()"><span class="fc-comp-toggle-icon" aria-hidden="true">▼</span><span class="fc-comp-toggle-text">${fcCompLabel(fcCompOpen)}</span></button></div><div></div></div>`;
+
+  // ---- bloques 2 y 3: desglose + base comercial + excluidos (sección contraíble) ----
+  const mesNom = (FC_MES_NOMBRE[fcMes] || fcMes).toLowerCase();
+  html += `<div class="fc-comp-collapse${fcCompOpen?' is-open':''}" id="fcCompCollapse"><div class="fc-comp-inner"><div class="fc-comp">
+      <div class="fc-stage fc-comp-card fc-comp-n">
+        <div class="fc-stage-name">Leads nuevos</div>
+        <div class="fc-stage-count">${fcNuevos.length.toLocaleString()}</div>
+        <div class="fc-stage-conv">${pctOf(fcNuevos.length,totalLeads).toFixed(1)}% del total</div>
+        <div class="fc-stage-sub">creados en ${esc(mesNom)}</div>
+      </div>
+      <div class="fc-stage fc-comp-card fc-comp-r">
+        <div class="fc-stage-name">Recontactados atendidos</div>
+        <div class="fc-stage-count">${fcReconAt.length.toLocaleString()}</div>
+        <div class="fc-stage-conv">${pctOf(fcReconAt.length,totalLeads).toFixed(1)}% del total</div>
+        <div class="fc-stage-sub">meses anteriores · con respuesta de un gestor</div>
+      </div>
+      <div class="fc-stage fc-comp-card fc-comp-x">
+        <div class="fc-stage-name">Recontactados no atendidos</div>
+        <div class="fc-stage-count">${fcReconNoAt.length.toLocaleString()}</div>
+        <div class="fc-stage-conv">${pctOf(fcReconNoAt.length,totalLeads).toFixed(1)}% del total</div>
+        <div class="fc-stage-sub">meses anteriores · sin respuesta de un gestor</div>
+      </div>
+      <div class="fc-base">
+        <div class="fc-bracket"></div>
+        <div class="fc-bracket-stem"></div>
+        <div class="fc-base-box">
+          <div class="fc-base-label">Leads que ingresan al funnel</div>
+          <div class="fc-base-count">${baseCount.toLocaleString()}</div>
+          <div class="fc-base-pct">${pctOf(baseCount,totalLeads).toFixed(1)}% del total · nuevos + recontactados atendidos</div>
+        </div>
+      </div>
+      <div class="fc-excl">
+        <div class="fc-excl-stem"></div>
+        <div class="fc-excl-box">
+          <div class="fc-excl-label">Excluidos del funnel comercial</div>
+          <div class="fc-excl-count">${fcReconNoAt.length.toLocaleString()}</div>
+          <div class="fc-excl-sub">${pctOf(fcReconNoAt.length,totalLeads).toFixed(1)}% del total · parte del total del mes</div>
+          <div class="fc-stop">⊘ No continúan a las siguientes etapas</div>
+        </div>
+      </div>
+    </div></div></div>
+    <div class="fc-into">▼ Recorrido comercial · base ${baseCount.toLocaleString()} leads</div>`;
+
+  // ---- bloque 4: etapas DARWIN desde la base comercial ----
+  for(let i=1;i<FC_STAGE_ORDER.length;i++){
+    const key = FC_STAGE_ORDER[i];
     const count = counts[i];
-    const prevCount = i===0 ? count : counts[i-1];
-    const conv = i===0 ? 100 : (prevCount>0 ? (count/prevCount*100) : 0);
-    const pctDelTotal = maxCount>0 ? (count/maxCount*100) : 0;
-    const widthPct = Math.max(20, pctDelTotal);
+    const prevCount = counts[i-1];
+    const conv = prevCount>0 ? (count/prevCount*100) : 0;
+    const pctDelTotal = pctOf(count,totalLeads);
+    const pctDeBase = pctOf(count,baseCount);
+    const widthPct = Math.max(38, pctDelTotal)   // ancho mínimo legible; la proporción real se lee en el % lateral;
     html += `<div class="fc-row">
       <div class="fc-stage" style="width:${widthPct}%;background:${FC_COLORS[i]};">
-        <div class="fc-stage-name">${i+1}. ${FC_STAGE_LABELS[key]}</div>
+        <div class="fc-stage-name">${i}. ${FC_STAGE_LABELS[key]}</div>
         <div class="fc-stage-count">${count.toLocaleString()}</div>
-        <div class="fc-stage-conv">${conv.toFixed(1)}% ${i===0?'':'vs. etapa anterior'}</div>
+        <div class="fc-stage-conv">${conv.toFixed(1)}% vs. ${i===1?'base comercial':'etapa anterior'}</div>
       </div>
-      <div class="fc-side-label"><b>${pctDelTotal.toFixed(1)}%</b>del total de leads</div>
+      <div class="fc-side-label"><b>${pctDelTotal.toFixed(1)}%</b>del total de leads<small>${pctDeBase.toFixed(1)}% de la base</small></div>
     </div>`;
     if(i < FC_STAGE_ORDER.length-1) html += `<div class="fc-row"><div style="text-align:center;color:#666;font-size:14px;">▼</div><div></div></div>`;
-  });
+  }
   document.getElementById('fcStages').innerHTML = html;
   if(typeof renderFunnelOrigen==='function') renderFunnelOrigen(filtered, fcFrom, fcTo);
 
   // ---- venta (caja separada) ----
   const lastStageCount = counts[counts.length-1];
   const ventaConv = ratioOk && lastStageCount>0 ? (ventaCount/lastStageCount*100) : 0;
+  const nEtapaVenta = FC_STAGE_ORDER.length;   // numeración: 1..4 etapas DARWIN, 5 = Venta
   document.getElementById('fcVentaBox').innerHTML = `
-    <div class="fc-venta-label">▼ Resultado final — Venta</div>
+    <div class="fc-venta-label">▼ ${nEtapaVenta}. Resultado final — Venta</div>
     <div class="fc-venta-count">${ventaCount===null?'—':ventaCount.toLocaleString()}</div>
     <div class="fc-venta-sub">ventas Digital${SV.nivel==='nacional'?'':' · '+esc(SV.label)} · ${p.label}${GF.gestor?' (no se abren por gestor)':''}</div>
     <div class="fc-venta-conv">${ratioOk?`${ventaConv.toFixed(1)}% de conversión desde "${FC_STAGE_LABELS[FC_STAGE_ORDER[FC_STAGE_ORDER.length-1]]}"`:sinRatio}</div>
   `;
 
+  // ---- conversión Base comercial -> Venta ----
+  const ventaConvBase = ratioOk && baseCount>0 ? (ventaCount/baseCount*100) : 0;
+  document.getElementById('fcVentaBoxBase').innerHTML = `
+    <div class="fc-venta-label">▼ Conversión base comercial</div>
+    <div class="fc-venta-count">${ratioOk?ventaConvBase.toFixed(1)+'%':'—'}</div>
+    <div class="fc-venta-sub">Leads que ingresan al funnel → Venta</div>
+    <div class="fc-venta-conv">${ratioOk?`${ventaCount.toLocaleString()} ventas / ${baseCount.toLocaleString()} leads`:sinRatio}</div>
+  `;
+
   // ---- conversión Leads totales -> Venta (caja al lado) ----
   const ventaConvTotal = ratioOk && totalLeads>0 ? (ventaCount/totalLeads*100) : 0;
   document.getElementById('fcVentaBoxGlobal').innerHTML = `
-    <div class="fc-venta-label">▼ Conversión global</div>
+    <div class="fc-venta-label">▼ ${leadSoloNuevos()?'Ratio global (solo nuevos)':'Conversión global'}</div>
     <div class="fc-venta-count">${ratioOk?ventaConvTotal.toFixed(1)+'%':'—'}</div>
-    <div class="fc-venta-sub">Leads totales → Venta</div>
+    <div class="fc-venta-sub">${leadSoloNuevos()?'Ventas totales ÷ leads nuevos del mes':'Total de leads del mes → Venta'}</div>
     <div class="fc-venta-conv">${ratioOk?`${ventaCount.toLocaleString()} ventas / ${totalLeads.toLocaleString()} leads`:sinRatio}</div>
   `;
+
+  // ---- nota de alcance ----
+  document.getElementById('fcBaseNote').innerHTML =
+    `Base comercial = leads nuevos + recontactados atendidos (misma clasificación del "Funnel de origen"). Los recontactados no atendidos forman parte del total pero no entran al recorrido; las etapas 1–4 se calculan solo sobre la base. `+
+    `<span class="fc-note-warn">Las ventas provienen del reporte comercial y no se vinculan lead por lead con DARWIN: las conversiones a venta asumen que las ventas salen de la base comercial.</span>`;
 }
 
 renderTabs();
@@ -4288,6 +4461,7 @@ function downloadFunnelImage(canvas){
 // ===== FILTRO GLOBAL REGIÓN → ZONA → GESTOR + LEADS DESATENDIDOS + CONTACTABILIDAD
 // =====================================================================
 function gfPass(l){
+  if(!leadTipoPass(l)) return false;   // tipo de leads (global)
   if(!GF_ON) return true;
   return (!GF.region || l.hreg===GF.region) && (!GF.zona || l.hzona===GF.zona) && (!GF.gestor || l.gnom===GF.gestor);
 }
@@ -4363,7 +4537,17 @@ function gfSet(level,val){
 }
 function gfDrill(r,z,g){ GF.region=r||''; GF.zona=z||''; GF.gestor=g||''; gfRefresh(); }
 function gfUpTo(level){ if(level==='region'){ GF.zona=''; GF.gestor=''; } else if(level==='zona'){ GF.gestor=''; } gfRefresh(); }
-function gfReset(){ GF={region:'',zona:'',gestor:''}; gfRefresh(); }
+function gfReset(){ GF={region:'',zona:'',gestor:''}; LEAD_TIPO='todos'; leadTipoSyncUI(); gfRefresh(); }   // Nacional: conserva el mes, vuelve a "Todos los leads"
+function leadTipoSyncUI(){
+  document.querySelectorAll('#gfTipo .gf-seg-btn').forEach(b=>{ const on=b.dataset.v===LEAD_TIPO; b.classList.toggle('active',on); b.setAttribute('aria-pressed',String(on)); });
+  const bn=document.getElementById('leadTipoBanner'); if(bn) bn.hidden = !leadSoloNuevos();
+}
+function setLeadTipo(v){
+  const nv = v==='nuevos' ? 'nuevos' : 'todos';
+  if(nv===LEAD_TIPO) return;
+  LEAD_TIPO = nv; leadTipoSyncUI();
+  gfRefresh();   // recalcula todas las páginas con la misma base (mes, región, zona y gestor se conservan)
+}
 // la selección se guarda en la sesión del navegador: sobrevive a recargas y a la navegación por el tablero
 const GF_KEY = 'autoplan_gf';
 function gfSave(){ try{ sessionStorage.setItem(GF_KEY, JSON.stringify(GF)); }catch(e){} }
@@ -4588,7 +4772,11 @@ function detExport(){
 function renderNewLeadViews(){
   const FL=getDateFilteredLeads(), n=FL.length, nNuevos=FL.filter(l=>l.nuevo).length;
   const noData=n===0?`<br><span class="gf-count-label">Sin leads disponibles para ${esc(MES_LABELS[currentMes])} con la combinación de filtros actual.</span>`:'';
-  document.getElementById('gfCount').innerHTML=`<span class="gf-count-label">Total de leads del periodo</span><br><b>${fn(n)}</b> leads${gfActive()?' con filtro':''}<br><span class="gf-count-label">1 persona = 1 lead · ${fn(nNuevos)} nuevos · ${fn(n-nNuevos)} recontactados</span>${GF.gestor?' · ventas y metas: nivel '+(GF.zona?'zona':GF.region?'región':'nacional')+' (no existen por gestor)':''}${noData}`;
+  const [gm1,gm2]=mesRango(currentMes), mesCompleto = dateFrom===gm1 && dateTo===gm2;
+  const gfDet = leadSoloNuevos()
+    ? `Creados durante ${mesCompleto ? esc(mesLabelAnio(currentMes).replace(/\s*\(.*\)\s*$/,'')).toLowerCase() : 'su mes de ingreso'}`
+    : `1 persona = 1 lead · ${fn(nNuevos)} nuevos · ${fn(n-nNuevos)} recontactados`;
+  document.getElementById('gfCount').innerHTML=`<span class="gf-count-label">${leadSoloNuevos()?'Total de leads nuevos del periodo':'Total de leads del periodo'}</span><br><b>${fn(n)}</b> leads${gfActive()?' con filtro':''}<br><span class="gf-count-label">${gfDet}</span>${GF.gestor?' · ventas y metas: nivel '+(GF.zona?'zona':GF.region?'región':'nacional')+' (no existen por gestor)':''}${noData}`;
   renderDesat(); renderContact(); renderDetalle();
 }
 (function gfInit(){
